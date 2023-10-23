@@ -4,7 +4,7 @@ import React from 'react';
 type ButtonType = {
     name: string
     callBack:()=>void
-    number: number
+    // number?: number
     disabled: boolean
 }
 
