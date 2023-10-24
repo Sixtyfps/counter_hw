@@ -3,18 +3,17 @@ import React from 'react';
 
 type ButtonType = {
     name: string
-    callBack:()=>void
-    // number?: number
+    onClick:()=>void
     disabled: boolean
 }
 
 export const Button = (props: ButtonType) => {
 
-    const onClickHandler = () => {
-        props.callBack()
-    }
+    // const onClickHandler = () => {
+    //     props.onClick()
+    // }
 
     return (
-        <button disabled={props.disabled} onClick={onClickHandler}>{props.name}</button>
+        <button disabled={props.disabled} onClick={props.onClick}>{props.name}</button>
     )
 }
