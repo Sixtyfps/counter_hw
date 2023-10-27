@@ -7,3 +7,13 @@ input {
     border: 2px solid red;
     background-color: #ffcccc;
 }
+
+.minInput {
+    display: block;
+    /*background-color: #000000;*/
+}
+
+.maxInput {
+    display: block;
+    /*background-color: #000000;*/
+}

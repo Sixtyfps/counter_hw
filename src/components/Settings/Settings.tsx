@@ -4,41 +4,73 @@ import s from "./Settings.module.css"
 
 type SettingsType = {
     changeMaxMin:(min:number, max: number)=>void
+    onInputPromptMessage:(bool: boolean)=>void
+    onInputErrorMessage:(bool: boolean)=>void
+    onInputDisplayNumber:(bool: boolean)=>void
+    setMax:(number: number)=>void
+    setMin:(number: number)=>void
+    max: number
+    min: number
+    setIncButton:(bool: boolean)=>void
+    setResetButton:(bool: boolean)=>void
 }
 
 export const Settings = (props:SettingsType) => {
 
-    const [min, setMin] = useState(0)
-    const [max, setMax] = useState(0)
-
     const [active, setActive] = useState(true)
 
     const onMaxChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
-        setMax(+e.currentTarget.value)
+        props.setMax(Number(e.currentTarget.value))
+
+        props.setIncButton(true)
+        props.setResetButton(true)
+
         setActive(true)
+        props.onInputPromptMessage(true)
+        if (+e.currentTarget.value <= props.min || +e.currentTarget.value <= 0) {
+            props.onInputErrorMessage(true)
+            props.onInputPromptMessage(false)
+            props.onInputDisplayNumber(false)
+        }
     }
 
     const onMinChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
-        setMin(+e.currentTarget.value)
+        props.setMin(Number(e.currentTarget.value))
+
+        props.setIncButton(true)
+        props.setResetButton(true)
+
         setActive(true)
+        props.onInputPromptMessage(true)
+        if(+e.currentTarget.value < 0 || +e.currentTarget.value >= props.max) {
+            props.onInputErrorMessage(true)
+            props.onInputPromptMessage(false)
+            props.onInputDisplayNumber(false)
+        }
     }
 
     const onClickHandler = () => {
-        props.changeMaxMin(min, max)
+        props.changeMaxMin(props.min, props.max)
         setActive(false)
     }
 
     return (
         <div>
            <div>
-               <span>Min</span>
-               <input type="number" onChange={onMinChangeHandler} className={min < 0 || min >= max ? s.error : ''}/>
-
                <span>Max</span>
-               <input type="number" onChange={onMaxChangeHandler} className={max < 0 || max <= min ? s.error : ''}/>
+               <input type="number"
+                      value={props.max}
+                      onChange={onMaxChangeHandler}
+                      className={`${s.maxInput} ${props.max <= props.min || props.max<=0 ? s.error : ''}`}/>
+
+               <span>Min</span>
+               <input type="number"
+                      value={props.min}
+                      onChange={onMinChangeHandler}
+                      className={`${s.minInput} ${props.min < 0 || props.min >= props.max ? s.error : ''}`}/>
            </div>
            <div>
-               <Button name='set' onClick={onClickHandler} disabled={min<0 || max<0 || max<=min || !active}></Button>
+               <Button name='set' onClick={onClickHandler} disabled={props.min<0 || props.max<=props.min || !active}></Button>
            </div>
 
         </div>

@@ -6,20 +6,6 @@
     border-radius: 5%;
 }
 
-.background {
-    height: 60%;
-    margin: 5px 5px auto;
-    background-color: darkturquoise;
-    border-radius: 5%;
-
-}
-
-.background div {
-    margin: 0 auto;
-    display: inline-block;
-    font-size: 30px;
-}
-
 .buttons {
     height: 20%;
     margin: 5px 5px auto;
@@ -27,7 +13,4 @@
     border-radius: 5%;
 }
 
-.font-color {
-    color: red;
-}
 
