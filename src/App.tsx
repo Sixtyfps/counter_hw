@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import './App.css';
+import s from './App.module.css';
 import {Button} from "./components/Button/Button";
 import {Display} from "./components/Display/Display";
 import {Settings} from "./components/Settings/Settings";
@@ -83,7 +83,7 @@ function App() {
                       setResetButton={setResetButton}
             />
 
-            <div className={"counter"}>
+            <div className = {s.counter}>
 
                 <Display number={number}
                          maxNumber={maxNumber}
@@ -92,7 +92,7 @@ function App() {
                          displayNumber={displayNumber}
                 />
 
-                <div className={"buttons"}>
+                <div className={s.buttons}>
                     <Button name={"inc"}
                             onClick={inc}
                             disabled={incButton || number >= maxNumber}/>

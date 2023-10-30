@@ -26,11 +26,14 @@ export const Settings = (props:SettingsType) => {
         props.setResetButton(true)
 
         setActive(true)
-        props.onInputPromptMessage(true)
-        if (+e.currentTarget.value <= props.min || +e.currentTarget.value <= 0) {
+
+        if (+e.currentTarget.value <= props.min || +e.currentTarget.value <= 0
+            || props.min<0) {
             props.onInputErrorMessage(true)
             props.onInputPromptMessage(false)
             props.onInputDisplayNumber(false)
+        } else {
+            props.onInputPromptMessage(true)
         }
     }
 
@@ -41,11 +44,13 @@ export const Settings = (props:SettingsType) => {
         props.setResetButton(true)
 
         setActive(true)
-        props.onInputPromptMessage(true)
+
         if(+e.currentTarget.value < 0 || +e.currentTarget.value >= props.max) {
             props.onInputErrorMessage(true)
             props.onInputPromptMessage(false)
             props.onInputDisplayNumber(false)
+        } else {
+            props.onInputPromptMessage(true)
         }
     }
 
