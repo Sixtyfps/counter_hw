@@ -1,32 +1,38 @@
-.background {
+.display {
+    padding: 0 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     height: 60%;
     margin: 5px 5px auto;
-    background-color: darkturquoise;
-    border-radius: 5%;
-
+    border-radius: 7px;
+    border: 2px solid #55cbcc;
 }
 
 .background div {
-    /*margin: 0 auto;*/
-    /*display: inline-block;*/
     font-size: 50px;
     display: flex;
+}
+
+.digit {
+    margin: 0 auto;
+    font-size: 60px;
+    color: #55cbcc;
+    font-weight: bold;
 }
 
 .fontColor {
     color: #cc3939;
 }
 
-.digit {
-
-    margin: 0 auto;
-}
-
 .error {
     display: inline-block;
     color: red;
+    font-weight: bold;
 }
 
-.enterValue {
+.promptMessage {
     display: inline-block;
+    font-weight: bold;
+    color: #55cbcc
 }

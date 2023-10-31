@@ -69,7 +69,7 @@ function App() {
     }
 
     return (
-        <div className="App">
+        <div className={s.App}>
 
             <Settings changeMaxMin={changeMaxMin}
                       onInputPromptMessage={onInputPromptMessage}

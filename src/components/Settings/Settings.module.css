@@ -1,5 +1,19 @@
+.settings {
+
+}
+
+.settingsInputsContainer {
+
+}
+
+.settingsInputsContainer span{
+    font-weight: bold;
+    color: #55cbcc;
+}
+
 input {
     border-radius: 3px;
+    width: 70px;
 }
 
 
@@ -17,3 +31,4 @@ input {
     display: block;
     /*background-color: #000000;*/
 }
+

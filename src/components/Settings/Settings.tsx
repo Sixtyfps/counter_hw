@@ -60,15 +60,15 @@ export const Settings = (props:SettingsType) => {
     }
 
     return (
-        <div>
-           <div>
-               <span>Max</span>
+        <div className={s.settings}>
+           <div className={s.settingsInputsContainer}>
+               <span>Max value:</span>
                <input type="number"
                       value={props.max}
                       onChange={onMaxChangeHandler}
                       className={`${s.maxInput} ${props.max <= props.min || props.max<=0 ? s.error : ''}`}/>
 
-               <span>Min</span>
+               <span>Min value:</span>
                <input type="number"
                       value={props.min}
                       onChange={onMinChangeHandler}
