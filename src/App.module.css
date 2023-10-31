@@ -1,11 +1,14 @@
 .App {
+    padding-top: 20px;
     background-color: #2e3341;
     height: 100vh;
+    display: flex;
+    justify-content: space-evenly;
 }
 
 .counter {
-    margin: 0 auto;
-    width: 200px;
+    padding: 5px;
+    width: 230px;
     height: 150px;
     border: 2px solid #55cbcc;
     border-radius: 10px;
@@ -13,7 +16,7 @@
 
 .buttons {
     height: 32px;
-    margin: 8px 5px auto;
+    margin-top: 5px;
     border: 2px solid #55cbcc;
     border-radius: 7px;
     display: flex;

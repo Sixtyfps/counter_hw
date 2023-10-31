@@ -1,10 +1,10 @@
 .display {
-    padding: 0 5px;
+    padding: 5px;
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 60%;
-    margin: 5px 5px auto;
+    height: 90px;
+    /*margin: 5px 5px auto;*/
     border-radius: 7px;
     border: 2px solid #55cbcc;
 }
@@ -27,7 +27,7 @@
 
 .error {
     display: inline-block;
-    color: red;
+    color: #cc3939;
     font-weight: bold;
 }
 

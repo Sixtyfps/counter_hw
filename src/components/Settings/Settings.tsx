@@ -62,19 +62,25 @@ export const Settings = (props:SettingsType) => {
     return (
         <div className={s.settings}>
            <div className={s.settingsInputsContainer}>
-               <span>Max value:</span>
-               <input type="number"
-                      value={props.max}
-                      onChange={onMaxChangeHandler}
-                      className={`${s.maxInput} ${props.max <= props.min || props.max<=0 ? s.error : ''}`}/>
 
-               <span>Min value:</span>
-               <input type="number"
-                      value={props.min}
-                      onChange={onMinChangeHandler}
-                      className={`${s.minInput} ${props.min < 0 || props.min >= props.max ? s.error : ''}`}/>
+               <div className={s.inputContainer}>
+                   <span>Max value:</span>
+                   <input type="number"
+                          value={props.max}
+                          onChange={onMaxChangeHandler}
+                          className={`${s.maxInput} ${props.max <= props.min || props.max<=0 ? s.error : ''}`}/>
+               </div>
+
+               <div className={s.inputContainer}>
+                   <span>Min value:</span>
+                   <input type="number"
+                          value={props.min}
+                          onChange={onMinChangeHandler}
+                          className={`${s.minInput} ${props.min < 0 || props.min >= props.max ? s.error : ''}`}/>
+               </div>
+
            </div>
-           <div>
+           <div className={s.buttonContainer}>
                <Button name='set' onClick={onClickHandler} disabled={props.min<0 || props.max<=props.min || !active}></Button>
            </div>
 

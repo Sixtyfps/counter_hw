@@ -1,9 +1,19 @@
 .settings {
-
+    padding: 5px;
+    width: 230px;
+    height: 150px;
+    border: 2px solid #55cbcc;
+    border-radius: 10px;
 }
 
 .settingsInputsContainer {
-
+    padding: 5px;
+    height: 90px;
+    border: 2px solid #55cbcc;
+    border-radius: 7px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 }
 
 .settingsInputsContainer span{
@@ -11,11 +21,29 @@
     color: #55cbcc;
 }
 
-input {
-    border-radius: 3px;
-    width: 70px;
+.inputContainer {
+    display: flex;
+    justify-content: space-between;
 }
 
+input {
+    padding-left: 15px;
+    text-align: center;
+    border: none;
+    border-radius: 3px;
+    width: 70px;
+    font-weight: bold;
+}
+
+.buttonContainer {
+    height: 32px;
+    margin-top: 5px;
+    border: 2px solid #55cbcc;
+    border-radius: 7px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
 
 .error {
     border: 2px solid red;
@@ -23,12 +51,12 @@ input {
 }
 
 .minInput {
-    display: block;
+    /*display: block;*/
     /*background-color: #000000;*/
 }
 
 .maxInput {
-    display: block;
+    /*display: block;*/
     /*background-color: #000000;*/
 }
 
