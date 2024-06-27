@@ -1,15 +1,16 @@
 .App {
-    padding-top: 20px;
     background-color: #2e3341;
     height: 100vh;
     display: flex;
-    justify-content: space-evenly;
+    column-gap: 50px;
+    justify-content: center;
+    align-items: center;
 }
 
 .counter {
     padding: 5px;
     width: 230px;
-    height: 150px;
+    height: 146px;
     border: 2px solid #55cbcc;
     border-radius: 10px;
 }

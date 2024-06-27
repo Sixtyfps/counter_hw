@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import s from './App.module.css';
 import {Button} from "./components/Button/Button";
 import {Display} from "./components/Display/Display";
@@ -10,7 +10,7 @@ function App() {
     const [maxNumber, setMaxNumber] = useState(0)
 
     //---State for displayed number that changes between min and max
-    const [number, setNumber] = useState(minNumber)
+    const [ number, setNumber] = useState(minNumber)
 
     //---State for bools that show/hide counter value and messages
     const [prompt, setPrompt] = useState(true)
@@ -20,19 +20,6 @@ function App() {
     //---State for bools that enable/disable buttons
     const[incButton, setIncButton] = useState(true)
     const[resetButton, setResetButton] = useState(true)
-
-
-    // useEffect( () => {
-    //     let valueToString = localStorage.getItem('counterValue')
-    //     if (valueToString) {
-    //         let newValue = JSON.parse(valueToString)
-    //         setNumber(newValue)
-    //     }
-    // },[] )
-    //
-    // useEffect( () => {
-    //     localStorage.setItem('counterValue', JSON.stringify(number))
-    // }, [number] )
 
     const inc = () => {
         setNumber(number + 1)
